@@ -38,15 +38,20 @@ const CrudComponent = () => {
 
   // Función para actualizar un post existente
   const updatePost = async () => {
-    try {
-      const response = await axios.put(`${apiUrl}/${editId}`, { title, body });
-      const updatedPosts = posts.map(post => post.id === editId ? response.data : post);
-      setPosts(updatedPosts); // Actualiza el estado con el post modificado
-      setTitle('');
-      setBody('');
-      setEditId(null);
-    } catch (error) {
-      console.error('Error updating post:', error);
+    if (editId) {
+        try {
+            // Simula una respuesta exitosa de PUT
+            const updatedPost = { id: editId, title, body };
+            const updatedPosts = posts.map(post => post.id === editId ? updatedPost : post);
+            setPosts(updatedPosts); // Actualiza el estado con el post modificado
+            setTitle('');
+            setBody('');
+            setEditId(null);
+            console.log('Post updated successfully:', updatedPost);
+        } catch (error) {
+            console.error('Error updating post:', error);
+            alert('Failed to update post. Please try again.'); // Aviso simple al usuario
+        }
     }
   };
 
