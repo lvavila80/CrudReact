@@ -1,11 +1,11 @@
-// src/App.js
 import React from 'react';
-import CrudComponent from './CrudComponent';  // Asegúrate de que el nombre del archivo y la ruta sean correctos
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <CrudComponent />
+      <h1>Aplicación React Principal</h1>
+      {/* Aquí puedes agregar otros componentes o contenido */}
     </div>
   );
 }
