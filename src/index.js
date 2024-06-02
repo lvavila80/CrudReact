@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import axios from 'axios';
+import config from './config'; // Importar configuración
 import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById('root');
@@ -14,7 +15,7 @@ root.render(
 );
 
 // Lógica de CRUD
-const apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+const apiUrl = config.apiUrl; // Usar la URL del API desde la configuración
 let posts = [];
 let editId = null;
 
